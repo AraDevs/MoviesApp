@@ -12,7 +12,6 @@ import com.aradevs.moviesapp.R
  * @author AraDevs
  */
 class DislikedFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
