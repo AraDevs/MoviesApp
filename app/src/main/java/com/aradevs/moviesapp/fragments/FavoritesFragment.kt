@@ -54,11 +54,15 @@ class FavoritesFragment : Fragment() {
     private fun fillRecyclerView() {
         try {
             dataList = localStorageHelper.readFromStorage(LocalStorageHelper.FAVORITES)
-            if(dataList.isEmpty()){
+            if (dataList.isEmpty()) {
                 emptyScreen.visibility = View.VISIBLE
             }
-            recyclerView.layoutManager = GridLayoutManager(requireContext(), if (DeviceInfoHelper().isTablet(requireContext())) 4 else 2)
-            moviesAdapter = MoviesAdapter(dataList, ::goToMovieDetail, localStorageHelper)
+            val list = dataList.sortedWith(compareBy({ it.title }, { it.addedAt })).toMutableList()
+            recyclerView.layoutManager = GridLayoutManager(
+                requireContext(),
+                if (DeviceInfoHelper().isTablet(requireContext())) 4 else 2
+            )
+            moviesAdapter = MoviesAdapter(list, ::goToMovieDetail, localStorageHelper)
             recyclerView.adapter = moviesAdapter
         } catch (exception: Exception) {
             Log.e("Fragment", "NOT ATTACHED")

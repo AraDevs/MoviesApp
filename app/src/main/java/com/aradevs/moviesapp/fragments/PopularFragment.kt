@@ -82,7 +82,7 @@ class PopularFragment : Fragment() {
         this.currentPage = currentPage
         updateButtonCounter(currentPage)
         loading.visibility = View.VISIBLE
-        MoviesService(requireContext()).getPopularMovies(currentPage, "es_ES", ::manageMovieList)
+        MoviesService(requireContext()).getPopularMovies(currentPage, localStorageHelper.getCurrentLocale(), ::manageMovieList)
 
     }
 

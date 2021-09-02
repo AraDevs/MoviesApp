@@ -12,6 +12,7 @@ import com.aradevs.moviesapp.models.MovieModel
 import com.ceylonlabs.imageviewpopup.ImagePopup
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import java.util.*
 
 
 class MovieDetailActivity : AppCompatActivity() {
@@ -120,6 +121,7 @@ class MovieDetailActivity : AppCompatActivity() {
      */
     private fun setLiked(){
         resetVisibility()
+        currentMovie.addedAt = Date()
         localStorageHelper.addToStorage(LocalStorageHelper.FAVORITES, currentMovie)
     }
     /**
@@ -134,6 +136,7 @@ class MovieDetailActivity : AppCompatActivity() {
      */
     private fun setNotLiked(){
         resetVisibility()
+        currentMovie.addedAt = Date()
         localStorageHelper.addToStorage(LocalStorageHelper.NON_FAVORITES, currentMovie)
     }
     /**

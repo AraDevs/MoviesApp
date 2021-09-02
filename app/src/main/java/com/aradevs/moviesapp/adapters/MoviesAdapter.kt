@@ -37,8 +37,8 @@ class MoviesAdapter(private val mList: MutableList<MovieModel>, private val goTo
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentMovie = mList[position]
+        holder.setIsRecyclable(false)
         holder.textView.text = currentMovie.title
-
         holder.releaseDate.text = DateTimeUtils.formatWithPattern(currentMovie.releaseDate, "dd-MM-yyyy")
         if(localStorageHelper.existInStorage(LocalStorageHelper.FAVORITES, currentMovie)){
             holder.movieCardIndicator.visibility = View.VISIBLE
@@ -51,7 +51,6 @@ class MoviesAdapter(private val mList: MutableList<MovieModel>, private val goTo
         val imageUrl : String = if (currentMovie.imageUrl != null) AppEnvHelper().getW500ImageUrl(
             currentMovie.imageUrl!!
         ) else AppEnvHelper.NO_IMAGE
-
         Picasso.get().load(imageUrl).fit().centerCrop().into(holder.moviePicture)
         holder.movieContainer.setOnClickListener {
             goToDetail(Gson().toJson(currentMovie))

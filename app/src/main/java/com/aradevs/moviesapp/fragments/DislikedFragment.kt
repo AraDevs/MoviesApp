@@ -59,8 +59,9 @@ class DislikedFragment : Fragment() {
             if(dataList.isEmpty()){
                 emptyScreen.visibility = View.VISIBLE
             }
+            val list = dataList.sortedWith(compareBy({ it.title }, { it.addedAt })).toMutableList()
             recyclerView.layoutManager = GridLayoutManager(requireContext(), if(DeviceInfoHelper().isTablet(requireContext())) 4 else 2)
-            moviesAdapter = MoviesAdapter(dataList, ::goToMovieDetail, localStorageHelper)
+            moviesAdapter = MoviesAdapter(list, ::goToMovieDetail, localStorageHelper)
             recyclerView.adapter = moviesAdapter
         }catch (exception: Exception){
             Log.e("Fragment", "NOT ATTACHED")

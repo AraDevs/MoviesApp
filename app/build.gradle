@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId "com.aradevs.moviesapp"
-        minSdkVersion 22
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
-        versionName "0.5"
+        versionName "1.0-RC"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
