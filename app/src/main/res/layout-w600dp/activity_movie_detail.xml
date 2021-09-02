@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/movie_detail_img"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/black"
+                android:backgroundTint="@color/black"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/movie_detail_img"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/movie_detail_dislike"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/ic_baseline_thumb_down_alt_24"
+                        android:contentDescription="@string/app_name" />
+
+                    <ImageView
+                        android:id="@+id/movie_detail_like"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/ic_baseline_thumb_up_alt_24"
+                        android:contentDescription="@string/app_name" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/green"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="@id/movie_detail_img"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+                    android:id="@+id/movie_detail_votes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/movie_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:scrollHorizontally="true"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/movie_detail_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

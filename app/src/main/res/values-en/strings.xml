@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">Home</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_popular">Populars</string>
+    <string name="title_non_favorites">Non Favorites</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="empty">No information to show</string>
+    <string name="empty_favorites">There aren\'t any favorites</string>
+    <string name="empty_non_favorites">There aren\'t any non favorites</string>
+    <string name="try_again">Try again</string>
+    <string name="no_connection">No connection</string>
+    <string name="choose_language">Choose language</string>
+</resources>

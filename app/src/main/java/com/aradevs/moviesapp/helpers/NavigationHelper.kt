@@ -14,15 +14,15 @@ import com.aradevs.moviesapp.fragments.PopularFragment
  * @property fragmentManager obtains the currentFragmentManager of the appContext
  * @constructor Creates an available NavigationHelper
  */
-class NavigationHelper(private val fragmentManager: FragmentManager) {
+class NavigationHelper(private val fragmentManager: FragmentManager?) {
+
 
     /**
      * Inflates a [fragment] in the specified fragment manager.
      */
     private fun openFragment(fragment: Fragment) {
-        val transaction = fragmentManager.beginTransaction()
+        val transaction = fragmentManager!!.beginTransaction()
         transaction.replace(R.id.main_container, fragment)
-        transaction.addToBackStack(null)
         transaction.commit()
     }
 
@@ -34,9 +34,9 @@ class NavigationHelper(private val fragmentManager: FragmentManager) {
         when (menuItem.itemId) {
             R.id.navigation_home -> openFragment(PopularFragment.newInstance())
 
-            R.id.navigation_dashboard -> openFragment(FavoritesFragment.newInstance())
+            R.id.navigation_favorites -> openFragment(FavoritesFragment.newInstance())
 
-            R.id.navigation_notifications -> openFragment(DislikedFragment.newInstance())
+            R.id.navigation_non_favorites -> openFragment(DislikedFragment.newInstance())
         }
         return true
     }
