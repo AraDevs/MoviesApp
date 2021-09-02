@@ -7,7 +7,11 @@
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
     tools:context=".fragments.PopularFragment">
-
+    <include
+        layout="@layout/empty_non_favorites"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
     <TextView
         android:id="@+id/title_popular"
         android:layout_width="match_parent"

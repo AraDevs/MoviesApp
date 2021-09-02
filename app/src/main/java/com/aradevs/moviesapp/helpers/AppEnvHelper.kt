@@ -11,6 +11,7 @@ class AppEnvHelper {
     companion object {
         const val BASE_URL = "https://api.themoviedb.org/3/"
         const val API_KEY = "8a46a6480af6dbe40ff2e1931926f0f4"
+        const val NO_IMAGE = "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/112815904-no-image-available-icon-flat-vector-illustration.jpg?ver=6"
     }
 
     /***

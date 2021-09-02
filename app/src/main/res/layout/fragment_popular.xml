@@ -7,7 +7,11 @@
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
     tools:context=".fragments.PopularFragment">
-
+    <include
+        layout="@layout/empty_layout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +34,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/popular_loading"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/popular_recyclerview"

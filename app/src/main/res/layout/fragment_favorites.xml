@@ -8,19 +8,26 @@
     android:paddingEnd="20dp"
     tools:context=".fragments.PopularFragment">
 
+    <include
+        layout="@layout/empty_favorites"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+
     <TextView
         android:id="@+id/title_popular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="30sp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-        android:textStyle="bold"
-        android:text="@string/title_favorites" />
+        android:text="@string/title_favorites"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favorites_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp" />
 </LinearLayout>
