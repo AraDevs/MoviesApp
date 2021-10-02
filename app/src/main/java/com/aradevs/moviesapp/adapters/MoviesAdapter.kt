@@ -62,6 +62,7 @@ class MoviesAdapter(private val mList: MutableList<MovieModel>, private val goTo
         return mList.size
     }
 
+    //test
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val textView: TextView = itemView.findViewById(R.id.movie_card_title)
